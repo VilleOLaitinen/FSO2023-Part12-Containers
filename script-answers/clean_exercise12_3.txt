@@ -1,0 +1,3 @@
+$ docker start -i elastic_germain
+root@150e38a76982:/# nano /usr/src/app/index.js
+root@150e38a76982:/# exit
