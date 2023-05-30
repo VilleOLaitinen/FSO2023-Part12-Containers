@@ -1,0 +1,98 @@
+Script started on 2023-05-30 18:27:03+03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="120" LINES="30"]
+[?2004h]0;ville@Morssarikarju: /mnt/c/Users/ville/Desktop/FullStackOpen/FSO2023-Part12-Containers/todo-app/todo-backend[01;32mville@Morssarikarju[00m:[01;34m/mnt/c/Users/ville/Desktop/FullStackOpen/FSO2023-Part12-Containers/todo-app/todo-backend[00m$ exitcleardocker compose -f docker-compose.dev.yml down --volumes[A]0;ville@Morssarikarju: /mnt/c/Users/ville/Desktop/FullStackOpen/FSO2023-Part12-Containers/todo-app/todo-backend[01;32mville@Morssarikarju[00m:[01;34m/mnt/c/Users/ville/Desktop/FullStackOpen/FSO2023-Part12-Containers/todo-app/todo-backend[00m$ [C[C[C[C[C[C[Cexec -it todo-backend-mongo-1 mongosh -u root -p example
+[?2004l]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	647615db7045aeada3ffadd5
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.9.0[0m
+Using MongoDB:		6.0.6
+[1m[33mUsing Mongosh[0m:		1.9.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the [1mdisableTelemetry()[0m command.
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-05-30T15:26:14.673+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-05-30T15:26:15.225+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-05-30T15:26:15.225+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshlow[1G[0Jtest> shlo[11G[1G[0Jtest> shl[10G[1G[0Jtest> sh[9Gow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         12.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   40.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.find({})
+[
+  {
+    _id: ObjectId("647615950f53464a7d5ca315"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("647615950f53464a7d5ca316"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.insertOne({[1G[0Jthe_database> db.todos.insertOne([34G{ text[33mtext[39m:[32m'[39m[32mU[39m[32ms[39m[32mi[39m[32mn[39m[32mg[39m [32mm[39m[32mo[39m[32mn[39m[32mg[39m[32mo[39m[32ms[39m[32mh[39m [32mf[39m[32mr[39m[32mo[39m[32mm[39m[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh fro[39m[59G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh fr[39m[58G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh f[39m[57G[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh [39m[56G[32mi[39m[32mn[39m [32ma[39m [32mc[39m[32mo[39m[32mn[39m[32mt[39m[32ma[39m[32mi[39m[32mn[39m[32me[39m[32mr[39m[32m'[39m[1D[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[44m[32m'[49mUsing mongosh in a container'[39m[70G[1D[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh in a container'[39m[69G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh in a container[44m'[39m[49m[41G[1D[1G[0Jthe_database> db.todos.insertOne({ [33mtext[39m:[32m'Using mongosh in a container'[39m[40G[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({ [32m'text:'[39mUsing mongosh [36min[39m a container[32m'[39m[37G[1C[1C[1C[1C[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m:[32m'Using mongosh in a container'[39m[42G[1C[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m:[32m'Using mongosh in a container[44m'[39m[49m[43G[1C[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m:[32m'Using mongosh in a container'[39m[44G[1D[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m:[32m'Using mongosh in a container[44m'[39m[49m[43G[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container[44m'[39m[49m[44G[1C[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container'[39m[45G[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1C[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [44m[32m'[49mUsing mongosh in a container'[39m[73G[1C[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container'[39m[74G.[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container'[39m[74G, [32m'[39m[32md[39m[32mo[39m[32mn[39m[32me[39m[32m'[39m: tri[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container'[39m, [32m'done'[39m: tr[86Gu[33mtrue[39m});
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("647617697045aeada3ffadd6")
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container'[39m, [32m'done'[39m: [33mtrue[39m});[91G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId("647615950f53464a7d5ca315"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("647615950f53464a7d5ca316"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("647617697045aeada3ffadd6"),
+    text: [32m'Using mongosh in a container'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.insertOne({ [32m'[39m[32mt[39m[32me[39m[32mx[39m[32mt[39m[32m'[39m: [32m'[39m[32mI[39m[32mn[39m[32mc[39m[32mr[39m[32me[39m[32ma[39m[32ms[39m[32me[39m [32mt[39m[32mh[39m[32me[39m [32mn[39m[32mu[39m[32mm[39m[32mb[39m[32me[39m[32mr[39m [32mo[39m[32mf[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32ms[39m [32mi[39m[32mn[39m [32mm[39m[32my[39m [32mt[39m[32mo[39m[32mo[39m[32ml[39m[32mb[39m[32me[39m[32ml[39m[32mt[39m[32m'[39m, [32m'[39m[32md[39m[32mo[39m[32mn[39m[32me[39m[32m'[39m: fals[33mfalse[39m=[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Increase the number of tools in my toolbelt'[39m, [32m'done'[39m: [33mfalse[39m[104G)[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Increase the number of tools in my toolbelt'[39m, [32m'done'[39m: [33mfalse[39m[104G });
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("647617f27045aeada3ffadd7")
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Increase the number of tools in my toolbelt'[39m, [32m'done'[39m: [33mfalse[39m });[108G[1G[0Jthe_database> db.todos.find({})[32G[1G[0Jthe_database> db.todos.insertOne({ [32m'text'[39m: [32m'Using mongosh in a container'[39m, [32m'done'[39m: [33mtrue[39m});[91G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId("647615950f53464a7d5ca315"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("647615950f53464a7d5ca316"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("647617697045aeada3ffadd6"),
+    text: [32m'Using mongosh in a container'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("647617f27045aeada3ffadd7"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[?2004h]0;ville@Morssarikarju: /mnt/c/Users/ville/Desktop/FullStackOpen/FSO2023-Part12-Containers/todo-app/todo-backend[01;32mville@Morssarikarju[00m:[01;34m/mnt/c/Users/ville/Desktop/FullStackOpen/FSO2023-Part12-Containers/todo-app/todo-backend[00m$ exit
+[?2004lexit
+
+Script done on 2023-05-30 18:40:48+03:00 [COMMAND_EXIT_CODE="0"]
