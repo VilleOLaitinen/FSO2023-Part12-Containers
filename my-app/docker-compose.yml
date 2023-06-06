@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - mongo_data:/data/db
+
+  phonebook-backend:
+    environment:
+      MONGODB_URI: mongodb://the_username:the_password@mongo:27017/the_database
+      NODE_ENV: production
+    image: phonebook-backend-production
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      - mongo
+
+  phonebook-frontend:
+    image: phonebook-frontend-production
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      NODE:ENV: production
+      REACT_APP_BACKEND_URL: http://localhost:8080/api/persons
+      WDS_SOCKET_PORT: 8080
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy-production
+    depends_on:
+      - phonebook-backend
+      - phonebook-frontend
+
+volumes:
+  mongo_data:
